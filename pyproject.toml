@@ -1,0 +1,26 @@
+[project]
+name = "pbf-savefile"
+version = "0.1.0"
+description = "An experimental package for developing a savefile format for PBF data."
+authors = [{ name = "Cian Hughes", email = "chughes000@gmail.com" }]
+dependencies = [
+    "dask[dataframe]>=2024.7.1",
+    "fsspec>=2024.6.1",
+    "flatbuffers>=24.3.25",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = ["pytest>=8.3.2"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pbf_savefile"]
